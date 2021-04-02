@@ -32,5 +32,23 @@ class FiboRestApplicationTests {
         List<Integer> f = fibonacciService.getFibonacciList(testIndex);
 		assertEquals(expectedResult, f.size());
     }
+    
+    @Test
+    public void Given_Fibonacci_When_Number_Is_1_Then_List_Size_3() {
+        int testIndex = 1;
+        int expectedResult = 3;
+        
+        List<Integer> f = fibonacciService.getFibonacciList(testIndex);
+		assertEquals(expectedResult, f.size());
+    }
+    
+    @Test
+    public void Given_Fibonacci_When_Number_Is_1_Since_Small_Then_List_Size_1() {
+        int testIndex = -1;
+        int expectedResult = 1;
+        
+        List<Integer> f = fibonacciService.getFibonacciList(testIndex);
+		assertEquals(expectedResult, f.size());
+    }
 
 }
